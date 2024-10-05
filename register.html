@@ -58,7 +58,7 @@ p {
 </style>
 <div class="container">
 <p style="font-size: larger; font-family: Arial, Helvetica, sans-serif;">ZAREJESTRUJ SIĘ</p>
-<form action="process-signup.php" method="post">
+<form>
     <div>
     <label for="username">Wybierz nazwę użytkownika.</label>
     <br/>
@@ -89,9 +89,12 @@ p {
             <input type="password" id="password_repeat">
             </div>
             <br/>
-<button>Zarejestruj się.</button>
+<button onclick="register()">Zarejestruj się.</button>
 </form>
 <a href="index.html"><p style="font-size: small; font-family: Arial, Helvetica, sans-serif;">Powrót</p></a>
 </div>
 </body>
+<script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js"></script>
+    <script src="index.js"></script>
 </html>
