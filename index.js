@@ -38,7 +38,18 @@
   auth.createUserWithEmailAndPassword(email, password
     .then(function() {
         var user = auth.currentUser
-        alert('Konto utworozne.')
+        alert('Konto utworzone.')
+
+        var database_ref = database.ref()
+
+        var user_data = {
+            email : email,
+            username : username,
+            password : password,
+            name : name,
+            last_login : Date.now()
+        }
+        database_ref.child('users/' + user.uid).set(user_data)
     })
     .catch(function(error) {
         var error_code = error_code
