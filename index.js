@@ -33,31 +33,37 @@
         alert('Nie wszystkie pola są wypełnione.')
         return
     }
+    auth.createUserWithEmailAndPassword(email, password
+      .then(function() {
+          var user = auth.currentUser
+          alert('Konto utworzone.')
+  
+          var database_ref = database.ref()
+  
+          var user_data = {
+              email : email,
+              username : username,
+              password : password,
+              name : name,
+              last_login : Date.now()
+          }
+          database_ref.child('users/' + user.uid).set(user_data)
+      })
+      .catch(function(error) {
+          var error_code = error_code
+          var error_message = error_message
+  
+          alert(error_message)
+      })
+    )
   }
 
-  auth.createUserWithEmailAndPassword(email, password
-    .then(function() {
-        var user = auth.currentUser
-        alert('Konto utworzone.')
+  function login ()
+  {
 
-        var database_ref = database.ref()
+  }
 
-        var user_data = {
-            email : email,
-            username : username,
-            password : password,
-            name : name,
-            last_login : Date.now()
-        }
-        database_ref.child('users/' + user.uid).set(user_data)
-    })
-    .catch(function(error) {
-        var error_code = error_code
-        var error_message = error_message
 
-        alert(error_message)
-    })
-  )
 
   function validate_email(email)
   {
