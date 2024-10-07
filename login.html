@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bractwo Diamentów</title>
+  <link rel="stylesheet" type="text/css" href="plik.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head> 
+<body>
+	<style>
+		a{
+	color: rgb(126, 176, 193);
+	text-decoration: rgb(59, 123, 183);
+
+}
+
+a:hover{
+	color: rgb(59, 123, 183);
+}
+
+a:visited{
+	color: rgb(59, 123, 183);
+}
+
+
+a:active{
+	color: rgb(126, 176, 193);
+}
+body {
+    background: rgb(176, 176, 176);
+    background: url('tlo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container {
+    max-width: 450px;
+    width: 80%;
+    margin: 20px auto;
+    text-align: justify;
+    background-color: rgb(205, 205, 205);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: left;
+}
+p {
+    text-align: center;
+    font-size: larger;
+}
+</style>
+<div class="container">
+<p style="font-size: larger; font-family: Arial, Helvetica, sans-serif;">ZAREJESTRUJ SIĘ</p>
+<form>
+    <div>
+    <label for="username">Wprowadź nazwę użytkownika.</label>
+    <br/>
+    <input type="text" id="username">
+    </div>
+<br/>
+<label for="password">Wprowadź hasło.</label>
+    <br/>
+    <input type="password" id="password">
+    </div>
+    <br/>
+<button onclick="register()">Zarejestruj się.</button>
+</form>
+<a href="index.html"><p style="font-size: small; font-family: Arial, Helvetica, sans-serif;">Powrót</p></a>
+</div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js"></script>
+    <script src="index.js"></script>
+</html>

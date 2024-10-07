@@ -60,7 +60,14 @@
 
   function login ()
   {
+    email=document.getElementById('email').value
+    password=document.getElementById('password').value
 
+    if (validate_email(email)==false || validate_password(password)) 
+      {
+          alert('E-mail lub Hasło są niezgodne.')
+          return
+      }
   }
 
 
