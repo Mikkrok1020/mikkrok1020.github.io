@@ -36,7 +36,7 @@
     auth.createUserWithEmailAndPassword(email, password
       .then(function() {
           var user = auth.currentUser
-          alert('Konto utworzone.')
+          
   
           var database_ref = database.ref()
   
@@ -48,6 +48,7 @@
               last_login : Date.now()
           }
           database_ref.child('users/' + user.uid).set(user_data)
+          alert('Konto utworzone.')
       })
       .catch(function(error) {
           var error_code = error_code
@@ -68,6 +69,26 @@
           alert('E-mail lub Hasło są niezgodne.')
           return
       }
+
+      auth.signInWithEmailAndPassword(email, password)
+      .then(function() {
+        var user = auth.currentUser
+          
+  
+        var database_ref = database.ref()
+
+        var user_data = {
+            last_login : Date.now()
+        }
+        database_ref.child('users/' + user.uid).update(user_data)
+        alert('Zalogowano.')
+      })
+      .catch(function(error) {
+        var error_code = error_code
+        var error_message = error_message
+
+        alert(error_message)
+      })
   }
 
 
