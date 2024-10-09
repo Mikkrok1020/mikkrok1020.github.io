@@ -7,6 +7,7 @@
   <title>Bractwo Diamentów</title>
   <link rel="stylesheet" type="text/css" href="plik.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script type="module" src="firebaseauth.js"></script>
 </head> 
 <body>
 	<style>
@@ -60,6 +61,7 @@ p {
 <div class="container">
 <p style="font-size: larger; font-family: Arial, Helvetica, sans-serif;">ZALOGUJ SIĘ</p>
 <form>
+    <div id="signInMessage" class="messageDiv" style="display: none;"></div>
     <div>
     <label for="username">Wprowadź nazwę użytkownika.</label>
     <br/>
@@ -73,12 +75,10 @@ p {
     <br/>
 </div>
 <br>
-<button onclick="login()" href="strona.html">Zaloguj się.</button>
+<button class="btn" id="submitSignIn">Zaloguj się.</button>
 </form>
+<a href="index.html"><p style="font-size: small; font-family: Arial, Helvetica, sans-serif;">Powrót</p></a>
 <a href="index.html"><p style="font-size: small; font-family: Arial, Helvetica, sans-serif;">Powrót</p></a>
 </div>
 </body>
-<script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js"></script>
-    <script src="index.js"></script>
 </html>

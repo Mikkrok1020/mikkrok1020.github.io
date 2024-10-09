@@ -22,6 +22,11 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+  function showMessage(message, divId) {
+    var messageDiv=document.getElementById(divId);
+    messageDiv.style.display="block";
+    messageDiv.innerHTML
+  }
   const signUp=document.getElementById('submitSignUp')
   signUp.addEventListener('click', (event)=>{
     event.preventDefault();
@@ -31,5 +36,15 @@
     const username=document.getElementById('rusername').value;
     
     const auth=getAuth();
-    
+    const db=getFirestore();
+
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential)=>{
+      const user=userCredential.user;
+      const userData={
+        email: email,
+        name: name,
+        username: username,
+      };
+    })
   })
