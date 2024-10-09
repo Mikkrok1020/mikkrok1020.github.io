@@ -25,7 +25,11 @@
   function showMessage(message, divId) {
     var messageDiv=document.getElementById(divId);
     messageDiv.style.display="block";
-    messageDiv.innerHTML
+    messageDiv.innerHTML=message;
+    messageDiv.style.opacity=1;
+    setTimeout(function(){
+      messageDiv.style.opacity=0;
+    },5000);
   }
   const signUp=document.getElementById('submitSignUp')
   signUp.addEventListener('click', (event)=>{
@@ -46,5 +50,25 @@
         name: name,
         username: username,
       };
+      showMessage('Konto utworzone.', 'signUpMessage');
+      const docRef=doc(db, "użytkownicy", user.uid);
+      setDoc(docRef, userData)
+      .then(()=>{
+        window.location.href='index.html';
+      })
+      .catch((error)=>{
+        console.error("Error.", error)
+      })
     })
-  })
+    .catch((error)=>{
+      const errorCode=error.code;
+      if(errorCode=='auth/email-already-in-use')
+      {
+        showMessage('Adres email już istnieje!', 'signUpMessage');
+      }
+      else
+      {
+        showMessage('Nie można stworzyć użytkownika.', 'signUpMessage');
+      }
+    })
+  });
