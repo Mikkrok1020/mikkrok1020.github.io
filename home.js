@@ -20,7 +20,6 @@ const firebaseConfig = {
 
   const auth=getAuth();
   const db=getFirestore();
-  const email=document.getFirestore('email');
 
   onAuthStateChanged(auth, (user)=>{
     const loggedInUserId=localStorage.getItem('loggedInUserId');
