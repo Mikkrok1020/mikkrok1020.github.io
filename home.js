@@ -22,11 +22,6 @@ const firebaseConfig = {
   const db=getFirestore();
   const email=document.getFirestore('email');
 
-  nologgeduser(auth, ()=>{
-    if(loggedInUserId===false){
-        window.location.href='index.html';
-    }
-  })
   onAuthStateChanged(auth, (user)=>{
     const loggedInUserId=localStorage.getItem('loggedInUserId');
     if(loggedInUserId){
@@ -49,6 +44,7 @@ const firebaseConfig = {
     }
     else{
         console.log("User Id not found in local storage.")
+        window.location.href='index.html';
     }
   })
 
