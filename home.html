@@ -7,7 +7,7 @@
   <title>Bractwo Diamentów</title>
   <link rel="stylesheet" type="text/css" href="plik.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <script type="src" src="firebaseauth.js"></script>
+  <script type="module" src="./home.js"></script>
 </head> 
 <body>
     
@@ -67,7 +67,11 @@ a {
 <a href="https://discord.gg/TDWTmBUKzQ">Zaproszenie</a>
 <br>
 <h1>Twój profil</h1>
-
+<div>Nazwa użytkownika: <span id="loggedUserUsername"></span></div>
+<div>Imię: <span id="loggedUserName"></span></div>
+<br/>
+<br/>
+<button id="logout">Wyloguj się</button>
 </div>
 </body>
 
