@@ -54,7 +54,7 @@
       const docRef=doc(db, "użytkownicy", user.uid);
       setDoc(docRef, userData)
       .then(()=>{
-        window.location.href='index.html';
+        window.location.href='home.html';
       })
       .catch((error)=>{
         console.error("Error.", error)
