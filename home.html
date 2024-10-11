@@ -58,21 +58,56 @@ p {
     text-align: center;
     font-size: larger;
 }
+.sidebar{
+    height: auto;
+    width: 200px;
+    height: 870px;
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNaMGmr9w17BZNERq_qv5GOQvOTAZ5ZC4YEg&s") gray repeat;
+    background-repeat: repeat;
+    background-position: 150px;
+    overflow-wrap:normal;
+    position: fixed;
+}
 
 </style>
-
+<div class="sidebar">
+<button class="w3-button w3-teal w3-xlarge w3-right w3-hide-large" onclick="w3_open()">&#9776;</button>
+<div class="w3-main" style="margin-right:10px" id="mySidebar">
+<div class="w3-teal">
+  <button class="w3-bar-item w3-button w3-hide-large" onclick="w3_close()">Close &times;</button>
+  
+  <div class="w3-container">
+    <h2>Twój Profil</h2>
+    Twoja nazwa <br/> użytkownika: <span id="loggedUserUsername"></span>
+    <br/>
+    <br/>
+    Twoje imię: <span id="loggedUserName"></span>
+  </div>
+</div>
+</div> 
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
  
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+</div>
 <div class="container">
 <h1>SERWER DISCORD</h1>
 <a href="https://discord.gg/TDWTmBUKzQ"><p style="text-align: center;">Zaproszenie</p></a>
 <br>
-<h1>Twój profil</h1>
-<div style="text-align: center;">Nazwa użytkownika: <span id="loggedUserUsername"></span></div>
+
+
 <div style="text-align: center;">Imię: <span id="loggedUserName"></span></div>
 <br/>
 <br/>
 <div style="height: 550px"><button id="logout">Wyloguj się</button></div>
 </div>
+
+
 </body>
 
 </html>
