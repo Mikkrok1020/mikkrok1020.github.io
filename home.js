@@ -21,7 +21,7 @@ const firebaseConfig = {
   const auth=getAuth();
   const db=getFirestore();
 
-  onAuthStateChanged(aut, (user)=>{
+  onAuthStateChanged(auth, (user)=>{
     const loggedInUserId=localStorage.getItem('loggedInUserId');
     if(loggedInUserId){
         const docRef = doc(db, "users", loggedInUserId);
