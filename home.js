@@ -46,7 +46,11 @@ const firebaseConfig = {
         window.location.href='index.html';
     }
   })
-
+  
+  document.getElementById('loggedUserUsername').innerText=userData.username;
+  document.getElementById('loggedUserEmail').innerText=userData.email;
+  document.getElementById('loggedUserName').innerText=userData.name;
+  
   const logoutButton=document.getElementById('logout');
   logoutButton.addEventListener('click',()=>{
     localStorage.removeItem('loggedInUserId');
@@ -58,3 +62,4 @@ const firebaseConfig = {
         console.error('Error Signing Out: ', error);
     })
   })
+  
