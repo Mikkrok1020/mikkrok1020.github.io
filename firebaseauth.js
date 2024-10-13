@@ -97,3 +97,5 @@
       }
     })
   })
+  localStorage.setItem('cachedValue1', username);
+  localStorage.setItem('cachedValue2', name);
